@@ -1,0 +1,5 @@
+*vs
+*.env
+*obj
+*bin
+*csproj.user
