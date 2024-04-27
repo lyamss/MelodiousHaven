@@ -8,7 +8,7 @@ jobs:
 
 
   dotnet-audit:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - name: Checkout librairies
       uses: actions/checkout@v2
