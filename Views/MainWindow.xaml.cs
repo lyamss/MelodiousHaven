@@ -88,5 +88,21 @@ namespace MelodiousHaven
             }
         }
 
+        private void PlayButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (mediaPlayer.Source != null)
+            {
+                mediaPlayer.Play();
+            }
+        }
+
+        private void PauseButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (mediaPlayer.Source != null)
+            {
+                mediaPlayer.Pause();
+            }
+        }
+
     }
 }

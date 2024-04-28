@@ -14,4 +14,8 @@
     <Content Include="assets\logo_MelodiousHaven.ico" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Resource Include="assets\search_icon.ico" />
+  </ItemGroup>
+
 </Project>
