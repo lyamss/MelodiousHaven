@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MelodiousHaven"
         mc:Ignorable="d"
         Title="Melodious Haven" Height="450" Width="800">
     <Grid>
@@ -32,18 +31,25 @@
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <Button x:Name="addMusicFolderButton"
-            Content="Ajouter un dossier de musique"
+            Content="Add folder Music"
             Click="ButtonRecoverFolderMusic"
             Margin="10"
             Padding="10, 5"
             Grid.Row="0"/>
 
+        <TextBox x:Name="searchTextBox"
+         Margin="10"
+         Padding="10, 5"
+         Grid.Row="1"
+         TextChanged="SearchMusicInList"/>
+
         <ListBox x:Name="myListMusic"
-             Grid.Row="1"
+             Grid.Row="2"
              SelectionChanged="ListMusic_SelectionChanged"
              Margin="10">
             <ListBox.ItemTemplate>

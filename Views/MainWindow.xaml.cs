@@ -1,7 +1,6 @@
 ﻿using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Forms;
 using System.Windows.Media;
 
 namespace MelodiousHaven
@@ -39,13 +38,14 @@ namespace MelodiousHaven
                 }
             }
 
-            foreach (var directory in Directory.GetDirectories(path)) // recursively for the subfolder
+            foreach (var directory in Directory.GetDirectories(path))
             {
-                FindMusicFiles(directory);
+                FindMusicFiles(directory); // recursively for the subfolder
             }
         }
 
         private List<string> musicFiles = new List<string>();
+        private List<string> filteredMusicFiles = new List<string>();
 
 
         private void AddToPlaylist(string filePath)
@@ -54,17 +54,38 @@ namespace MelodiousHaven
 
             myListMusic.Items.Add(fileName);
             musicFiles.Add(filePath);
+            filteredMusicFiles = new List<string>(musicFiles);
         }
 
         private void ListMusic_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int selectedIndex = myListMusic.SelectedIndex;
 
-            string selectedFile = musicFiles[selectedIndex];
+            if (selectedIndex >= 0 && selectedIndex < filteredMusicFiles.Count)
+            {
+                string selectedFile = filteredMusicFiles[selectedIndex];
 
-            mediaPlayer.Open(new Uri(selectedFile));
+                mediaPlayer.Open(new Uri(selectedFile));
 
-            mediaPlayer.Play();
+                mediaPlayer.Play();
+            }
+        }
+
+        private void SearchMusicInList(object sender, TextChangedEventArgs e)
+        {
+            string searchText = searchTextBox.Text.ToLower();
+
+            filteredMusicFiles.Clear();
+            myListMusic.Items.Clear();
+
+            foreach (string musicFile in musicFiles)
+            {
+                if (Path.GetFileName(musicFile).ToLower().Contains(searchText))
+                {
+                    myListMusic.Items.Add(Path.GetFileName(musicFile));
+                    filteredMusicFiles.Add(musicFile);
+                }
+            }
         }
 
     }
