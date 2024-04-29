@@ -38,7 +38,7 @@
 
         <Button x:Name="addMusicFolderButton"
             Content="Add folder Music"
-            Click="ButtonRecoverFolderMusic"
+            Command="{Binding AddFolderMusicCommand}"
             Margin="10"
             Padding="10, 5"
             Grid.Row="0"/>
@@ -52,14 +52,14 @@
 
             <Button x:Name="playButton"
             Content="Play"
-            Click="PlayButton_Click"
+            Command="{Binding PlayCommand}"
             Margin="10"
             Padding="10, 5"
             Grid.Column="0"/>
 
             <Button x:Name="pauseButton"
             Content="Pause"
-            Click="PauseButton_Click"
+            Command="{Binding PauseCommand}"
             Margin="10"
             Padding="10, 5"
             Grid.Column="1"/>
@@ -78,7 +78,7 @@
                 <TextBox x:Name="searchTextBox"
                  Grid.Column="1"
                  Padding="10, 5"
-                 TextChanged="SearchMusicInList"/>
+                 Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
         </ContentControl>
 
@@ -86,14 +86,14 @@
 
         <ListBox x:Name="myListMusic"
              Grid.Row="3"
-             SelectionChanged="ListMusic_SelectionChanged"
+             ItemsSource="{Binding FilteredMusicFiles}"
+             SelectedItem="{Binding SelectedMusicFile}"
              Margin="10">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding}" Padding="5" />
+                    <TextBlock Text="{Binding Name}" Padding="5" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
     </Grid>
 </Window>
-    
