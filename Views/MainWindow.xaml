@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         Title="Melodious Haven" Height="450" Width="800">
     <Grid>
         <Grid.Resources>
@@ -30,6 +31,7 @@
             </Style>
         </Grid.Resources>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -85,7 +87,7 @@
 
 
         <ListBox x:Name="myListMusic"
-             Grid.Row="3"
+             Grid.Row="4"
              ItemsSource="{Binding FilteredMusicFiles}"
              SelectedItem="{Binding SelectedMusicFile}"
              Margin="10">
@@ -95,5 +97,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Image Grid.Row="3" x:Name="GifAnimeBeat" gif:ImageBehavior.AnimatedSource="/MelodiousHaven;component/assets/danse_belle.gif" Width="80"  Height="50"/>
     </Grid>
 </Window>

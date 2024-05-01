@@ -18,4 +18,12 @@
     <Resource Include="assets\search_icon.ico" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Resource Include="assets\danse_belle.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
+  </ItemGroup>
+
 </Project>
