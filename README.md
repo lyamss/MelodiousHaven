@@ -1,6 +1,8 @@
 # MelodiousHaven
 Simple media player for Window
 
+[Watch the video](https://lyamss.github.io/MelodiousHaven/)
+
 *Start projet*
 
 ```
