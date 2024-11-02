@@ -1,7 +1,9 @@
 # MelodiousHaven
 Simple media player for Window
 
-[Watch the video](https://lyamss.github.io/MelodiousHaven/)
+[Watch the video demonstration](https://lyamss.github.io/MelodiousHaven/)
+
+![Image](./ScreenImg.png)
 
 *Start projet*
 

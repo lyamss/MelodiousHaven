@@ -3,11 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video</title>
+    <title>Video Player</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .video-container {
+            max-width: 100%;
+            width: 640px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 640px) {
+            .video-container {
+                width: 95%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <video width="640" height="360" controls>
-        <source src="./Screen.mp4" type="video/mp4">
-    </video>
+    <div class="video-container">
+        <video controls>
+            <source src="./Screen.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 </body>
 </html>
